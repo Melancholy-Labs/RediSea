@@ -5,7 +5,7 @@ import redis, time, sys, os
 from subprocess import getoutput
 
 r = redis.Redis()
-version = '0.1.25'
+version = '0.1.26'
 author = 'Hifumi1337'
 
 class RediSea:
@@ -50,6 +50,7 @@ class RediSea:
                 print("df, dumpf    Dump entire Redis database (keys) into a file")
                 print("b, banner    Displays our cool banner!")
                 print("i, info      Return general information about the Redis instance")
+                print("r, remote    Remotely connect to a Redis instance")
             elif command == "q" or command == "quit":
                 print("Disconnecting...")
                 time.sleep(0.5)
@@ -80,6 +81,20 @@ class RediSea:
                redis_data_str = str(redis_data)
                
                print(redis_data_str)
+            elif command == "r" or command == "remote":
+                print("When remotely connecting to Redis, you will be removed from the RediSea shell!")
+                
+                ip_address = input("IP Address: ")
+                port = input("Port: ")
+                
+                confirm_choice = input("Are you sure you would like to continue (y/n)? ")
+
+                if confirm_choice == "y":
+                    os.system(f"redis-cli -h {ip_address} -p {port}")
+                elif confirm_choice == "n":
+                    print("Exiting...")
+                else:
+                    print("Please choose y/n")
             else:
                 print("? Unrecognized Command ?")
 
