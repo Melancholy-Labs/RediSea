@@ -6,7 +6,7 @@ from subprocess import getoutput
 from prettytable import PrettyTable
 
 r = redis.Redis()
-version = '0.2.28'
+version = '0.2.30'
 author = 'Hifumi1337'
 
 class RediSea:
@@ -22,7 +22,7 @@ class RediSea:
                             
                             {0} | v{1}
 
-    Traverse the Redis-cli in a much simpler way by using our open prompt!
+Traverse a Redis database instance in a much simpler way by using our open prompt!
 
                     Start by typing "h" in the prompt below
         
@@ -68,8 +68,6 @@ class RediSea:
 
     def redis_comms(self):
 
-        rsb = RediSea()
-
         whoami = getoutput("whoami")
 
         print("Connecting...")
@@ -104,7 +102,12 @@ class RediSea:
                 
                 print(f"Key: {key} \n Value: {key_output}")
             elif command == "c" or command == "clear":
-                os.system("clear")
+                system_info = platform.system()
+
+                if system_info == 'Windows':
+                    os.system("cls")
+                else:
+                    os.system("clear")
             elif command == "dump" or command == "d":
                 for key in r.scan_iter("*"):
                     print(key)
@@ -115,7 +118,7 @@ class RediSea:
                 
                 print("Data successfully dumped!")
             elif command == "b" or command == "banner":
-                rsb.banner()
+                RediSea().banner()
             elif command == "i" or command == "info":
                redis_data = r.execute_command('CLIENT LIST')
                redis_data_str = str(redis_data)
