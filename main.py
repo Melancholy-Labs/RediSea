@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import redis, time, sys, os
+import redis, time, sys, os, platform, argparse
 
 from subprocess import getoutput
+from prettytable import PrettyTable
 
 r = redis.Redis()
-version = '0.1.26'
+version = '0.2.28'
 author = 'Hifumi1337'
 
 class RediSea:
@@ -26,6 +27,44 @@ class RediSea:
                     Start by typing "h" in the prompt below
         
         """.format(author, version))
+    
+    def real_time_render(self):
+
+        parser = argparse.ArgumentParser()
+        parser.add_argument('-s', '--start_server', help="Choose specific keys to investigate in real-time", action='store_true', default=True, required=False)
+        args = parser.parse_args()
+
+        def clear():
+            if platform.system() == "Windows":
+                os.system("cls")
+            else:
+                os.system("clear")
+        
+        timer = 0
+
+        if args.start_server:
+
+            print("Example: key1 key2 key3")
+            user_keys = input("Enter Search Criteria (seperated by spaces): ")
+
+            key_list = user_keys.split()
+
+            while True:
+                time.sleep(0.1) # 100ms
+                clear()
+
+                state_header = PrettyTable(["Keys", "Values"])
+                
+                for key_stuff in key_list:
+                    state_value = r.mget(key_stuff)
+                    state_header.add_row([key_stuff, state_value])
+                
+                print(state_header.get_string(title="Real Time Redis Data"))
+
+                timer += 100
+
+                print("\nTime Elapsed: {0}ms".format(timer))
+                print("\nYou can exit out by pressing Ctrl + C")
 
     def redis_comms(self):
 
@@ -51,6 +90,7 @@ class RediSea:
                 print("b, banner    Displays our cool banner!")
                 print("i, info      Return general information about the Redis instance")
                 print("r, remote    Remotely connect to a Redis instance")
+                print("rt, realtime View Redis data update in real-time")
             elif command == "q" or command == "quit":
                 print("Disconnecting...")
                 time.sleep(0.5)
@@ -95,6 +135,8 @@ class RediSea:
                     print("Exiting...")
                 else:
                     print("Please choose y/n")
+            elif command == "rt" or command == "realtime":
+                RediSea().real_time_render()
             else:
                 print("? Unrecognized Command ?")
 
