@@ -11,7 +11,7 @@ There is now have a Linux binary available! You can use the provided executable 
 ./redisea-linux
 ```
 
-NOTE: Some distributions may require you to give the binary executable permisions. You can do this by running the following command:
+NOTE: Some distributions may require you to give the binary executable permissions. You can do this by running the following command:
 ```bash
 chmod +x redisea-linux
 ```
