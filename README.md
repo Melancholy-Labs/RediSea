@@ -8,7 +8,12 @@ Please note, this framework does work even if a Redis instance is not present. T
 
 There is now have a Linux binary available! You can use the provided executable by running the following command (after downloading from our releases):
 ```bash
-./redisea
+./redisea-linux
+```
+
+NOTE: Some distributions may require you to give the binary executable permisions. You can do this by running the following command:
+```bash
+chmod +x redisea-linux
 ```
 
 ## Installation (only required if installing from source)
