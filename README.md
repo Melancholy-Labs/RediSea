@@ -1,6 +1,6 @@
 # RediSea
 
-<img src="https://raw.githubusercontent.com/hifumi1337/RediSea/main/assets/redisea_banner_v3.png">
+<img src="https://raw.githubusercontent.com/azazelm3dj3d/RediSea/main/assets/redisea_banner_v3.png">
 
 RediSea is a Redis (in-memory database) communication framework used for viewing Redis keys, dumping Redis keys, dumping key information about the Redis server, real-time Redis database analysis, and much more!
 

@@ -1,5 +1,5 @@
 """
-    Owner: Hifumi1337 (https://github.com/hifumi1337)
+    Owner: azazelm3dj3d (https://github.com/azazelm3dj3d)
     Project: RediSea
     License: MIT
 """
@@ -12,11 +12,11 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 setuptools.setup(
     name = "redisea",
     version = "1.2.32",
-    author = "Hifumi1337",
+    author = "azazelm3dj3d",
     description = "RediSea is a Redis (in-memory database) communication framework used for dumping key/value information within the Redis server, real-time Redis database analysis, and much more.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "https://github.com/hifumi1337/RediSea",
+    url = "https://github.com/azazelm3dj3d/RediSea",
     classifiers = [
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
