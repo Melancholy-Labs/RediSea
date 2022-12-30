@@ -11,7 +11,7 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 
 setuptools.setup(
     name = "redisea",
-    version = "1.2.32",
+    version = "1.2.33",
     author = "azazelm3dj3d",
     description = "RediSea is a Redis (in-memory database) communication framework used for dumping key/value information within the Redis server, real-time Redis database analysis, and much more.",
     long_description = long_description,
