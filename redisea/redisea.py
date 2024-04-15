@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Owner: azazelm3dj3d (https://github.com/azazelm3dj3d)
+    Owner: battleoverflow (https://github.com/battleoverflow)
     Project: RediSea
     License: MIT
 """
@@ -12,8 +12,8 @@ from subprocess import getoutput
 from prettytable import PrettyTable
 
 r = redis.Redis()
-author = 'azazelm3dj3d'
-version = '1.2.32'
+author = 'battleoverflow'
+version = '1.2.34'
 
 class RediSea:
 
@@ -185,7 +185,7 @@ Traverse a Redis database instance in a much easier way by using our open prompt
             
             except KeyboardInterrupt:
                 print("\n\nThank you for using RediSea!\n")
-                print(f"Author: {author} (https://github.com/azazelm3dj3d)")
+                print(f"Author: {author} (https://github.com/battleoverflow)")
                 print(f"Version: {version}")
                 time.sleep(0.2)
                 sys.exit(0)

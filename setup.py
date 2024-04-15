@@ -1,5 +1,5 @@
 """
-    Owner: azazelm3dj3d (https://github.com/azazelm3dj3d)
+    Owner: battleoverflow (https://github.com/battleoverflow)
     Project: RediSea
     License: MIT
 """
@@ -11,12 +11,12 @@ with open("README.md", "r", encoding = "utf-8") as fh:
 
 setuptools.setup(
     name = "redisea",
-    version = "1.2.33",
-    author = "azazelm3dj3d",
+    version = "1.2.34",
+    author = "battleoverflow",
     description = "RediSea is a Redis (in-memory database) communication framework used for dumping key/value information within the Redis server, real-time Redis database analysis, and much more.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    url = "https://github.com/azazelm3dj3d/RediSea",
+    url = "https://github.com/battleoverflow/RediSea",
     classifiers = [
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
